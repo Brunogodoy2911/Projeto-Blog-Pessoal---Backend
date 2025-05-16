@@ -9,12 +9,12 @@
 <br />
 
 <div align="center">
-  <img src="https://img.shields.io/github/languages/top/rafaelq80/aulas_java_t82?style=flat-square" />
-  <img src="https://img.shields.io/github/repo-size/rafaelq80/aulas_java_t82?style=flat-square" />
-  <img src="https://img.shields.io/github/languages/count/rafaelq80/aulas_java_t82?style=flat-square" />
-  <img src="https://img.shields.io/github/last-commit/rafaelq80/aulas_java_t82?style=flat-square" />
-  <img src="https://img.shields.io/github/issues/rafaelq80/aulas_java_t82?style=flat-square" />
-  <img src="https://img.shields.io/github/issues-pr/rafaelq80/aulas_java_t82?style=flat-square" />
+  <img src="https://img.shields.io/github/languages/top/Brunogodoy2911/Projeto-Blog-Pessoal---Backend?style=flat-square" />
+  <img src="https://img.shields.io/github/repo-size/Brunogodoy2911/Projeto-Blog-Pessoal---Backend?style=flat-square" />
+  <img src="https://img.shields.io/github/languages/count/Brunogodoy2911/Projeto-Blog-Pessoal---Backend?style=flat-square" />
+  <img src="https://img.shields.io/github/last-commit/Brunogodoy2911/Projeto-Blog-Pessoal---Backend?style=flat-square" />
+  <img src="https://img.shields.io/github/issues/Brunogodoy2911/Projeto-Blog-Pessoal---Backend?style=flat-square" />
+  <img src="https://img.shields.io/github/issues-pr/Brunogodoy2911/Projeto-Blog-Pessoal---Backend?style=flat-square" />
   <img src="https://img.shields.io/badge/status-construção-yellow" alt="Status: Em Construção">
 
 </div>
@@ -169,10 +169,10 @@ Para executar os códigos localmente, você precisará:
 
 ### 7.1. Importando o Projeto
 
-1. Clone o repositório do Projeto [Blog Pessoal](https://github.com/rafaelq80/blogpessoal_spring_t82) dentro da pasta do *Workspace* do STS
+1. Clone o repositório do Projeto [Blog Pessoal](https://github.com/Brunogodoy2911/Projeto-Blog-Pessoal---Backend) dentro da pasta do *Workspace* do STS
 
 ```bash
-git clone https://github.com/rafaelq80/blogpessoal_spring_t82.git
+git clone https://github.com/Brunogodoy2911/Projeto-Blog-Pessoal---Backend.git
 ```
 
 2. **Abra o STS** e selecione a pasta do *Workspace* onde você clonou o repositório do projeto
@@ -218,5 +218,5 @@ Este repositório é parte de um projeto educacional, mas contribuições são s
 
 <br />
 
-Desenvolvido por [**Rafael**](https://github.com/rafaelq80)
+Desenvolvido por [**Bruno Godoy**](https://github.com/Brunogodoy2911)
 Para dúvidas, sugestões ou colaborações, entre em contato via GitHub ou abra uma issue!
