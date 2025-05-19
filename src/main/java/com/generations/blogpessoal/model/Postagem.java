@@ -12,7 +12,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
+import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "tb_postagens")
 public class Postagem {
@@ -34,35 +36,4 @@ public class Postagem {
   @UpdateTimestamp
   private LocalDateTime data;
 
-  public Long getId() {
-    return this.id;
-  }
-
-  public void setId(Long id) {
-    this.id = id;
-  }
-
-  public String getTitulo() {
-    return this.titulo;
-  }
-
-  public void setTitulo(String titulo) {
-    this.titulo = titulo;
-  }
-
-  public String getTexto() {
-    return this.texto;
-  }
-
-  public void setTexto(String texto) {
-    this.texto = texto;
-  }
-
-  public LocalDateTime getData() {
-    return this.data;
-  }
-
-  public void setData(LocalDateTime data) {
-    this.data = data;
-  }
 }
