@@ -59,10 +59,9 @@ public class PostagemController {
     if (postagem.getId() == null)
       return ResponseEntity.badRequest().build();
 
-    if (postagemRepository.existsById(postagem.getId()))
-      return ResponseEntity.status(HttpStatus.OK).body(postagemRepository.save(postagem));
-
-    return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+    return postagemRepository.findById(postagem.getId())
+        .map(resposta -> ResponseEntity.ok(postagemRepository.save(postagem)))
+        .orElse(ResponseEntity.notFound().build());
   }
 
   @DeleteMapping("/{id}")
