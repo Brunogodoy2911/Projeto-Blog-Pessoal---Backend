@@ -5,7 +5,6 @@ import static org.springframework.security.config.Customizer.withDefaults;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -25,6 +24,12 @@ public class BasicSecurityConfig {
 
   @Autowired
   private JwtAuthFilter authFilter;
+
+  private static final String[] SWAGGER_LIST = {
+      "/swagger-ui/**",
+      "/v3/api-docs/**",
+      "/swagger-resources/**",
+  };
 
   @Bean
   UserDetailsService userDetailsService() {
@@ -65,7 +70,7 @@ public class BasicSecurityConfig {
             .requestMatchers("/usuarios/logar").permitAll()
             .requestMatchers("/usuarios/cadastrar").permitAll()
             .requestMatchers("/error/**").permitAll()
-            .requestMatchers(HttpMethod.OPTIONS).permitAll()
+            .requestMatchers(SWAGGER_LIST).permitAll()
             .anyRequest().authenticated())
         .authenticationProvider(authenticationProvider())
         .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class)
