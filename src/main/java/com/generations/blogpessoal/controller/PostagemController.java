@@ -22,11 +22,14 @@ import com.generations.blogpessoal.model.Postagem;
 import com.generations.blogpessoal.repository.PostagemRepository;
 import com.generations.blogpessoal.repository.TemaRepository;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/postagens")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
+@Tag(name = "Postagem", description = "Informações de Postagem")
 public class PostagemController {
 
   @Autowired
@@ -36,11 +39,13 @@ public class PostagemController {
   private TemaRepository temaRepository;
 
   @GetMapping
+  @Operation(summary = "Retornar todas as postagens", description = "Essa função é responsável por retornar todas as postagens existentes no banco de dados.")
   public ResponseEntity<List<Postagem>> getAll() {
     return ResponseEntity.ok(postagemRepository.findAll());
   }
 
   @GetMapping("/{id}")
+  @Operation(summary = "Retorna postagem por ID", description = "Essa função é responsável por retornar a postagem com o ID informado.")
   public ResponseEntity<Postagem> getById(@PathVariable Long id) {
     return postagemRepository.findById(id)
         .map(resposta -> ResponseEntity.ok(resposta))
@@ -48,11 +53,13 @@ public class PostagemController {
   }
 
   @GetMapping("/titulo/{titulo}")
+  @Operation(summary = "Retorna postagens pelo titulo", description = "Essa função é responsável por retornar todas as postagens com o titulo informado.")
   public ResponseEntity<List<Postagem>> getAllByTitulo(@PathVariable String titulo) {
     return ResponseEntity.ok(postagemRepository.findAllByTituloContainingIgnoreCase(titulo));
   }
 
   @PostMapping
+  @Operation(summary = "Cadastrar postagem", description = "Essa função é responsável por cadastrar a postagem informada no banco de dados.")
   public ResponseEntity<Postagem> post(@Valid @RequestBody Postagem postagem) {
     return temaRepository.findById(postagem.getTema().getId())
         .map(resposta -> ResponseEntity.status(HttpStatus.CREATED).body(postagemRepository.save(postagem)))
@@ -60,6 +67,7 @@ public class PostagemController {
   }
 
   @PutMapping
+  @Operation(summary = "Atualizar postagem", description = "Essa função é responsável por atualizar uma postagem específica.")
   public ResponseEntity<Postagem> put(@Valid @RequestBody Postagem postagem) {
 
     if (postagem.getId() == null)
@@ -77,6 +85,7 @@ public class PostagemController {
 
   @DeleteMapping("/{id}")
   @ResponseStatus(HttpStatus.NO_CONTENT)
+  @Operation(summary = "Deletar postagem", description = "Essa função é responsável por deletar a postagem informda do banco de dados.")
   public void delete(@PathVariable Long id) {
 
     Optional<Postagem> postagem = postagemRepository.findById(id);
