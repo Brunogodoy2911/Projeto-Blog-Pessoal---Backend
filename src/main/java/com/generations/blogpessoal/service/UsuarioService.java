@@ -32,6 +32,7 @@ public class UsuarioService {
       return Optional.empty();
 
     usuario.setSenha(criptografarSenha(usuario.getSenha()));
+    usuario.setId(null);
 
     return Optional.ofNullable(usuarioRepository.save(usuario));
   }
